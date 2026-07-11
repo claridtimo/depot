@@ -37,7 +37,15 @@
     <url>https://github.com/threerings/depot/</url>
     <tag>HEAD</tag>
   </scm>
-
+  
+  <repositories>
+    <repository>
+      <id>affliction-public</id>
+      <name>affliction-public</name>
+      <url>https://mvn.afflictionid.com/repository/public-repo/</url>
+	</repository>
+  </repositories>
+	
   <dependencies>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -72,7 +80,7 @@
     <dependency>
       <groupId>com.samskivert</groupId>
       <artifactId>samskivert</artifactId>
-      <version>1.12-SNAPSHOT</version>
+      <version>1.12</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

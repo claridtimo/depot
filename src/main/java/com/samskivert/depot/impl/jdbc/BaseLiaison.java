@@ -70,7 +70,7 @@ public abstract class BaseLiaison implements DatabaseLiaison
         ResultSet rs = conn.getMetaData().getTables(conn.getCatalog(), getSchemaName(), name, null);
         while (rs.next()) {
             String tname = rs.getString("TABLE_NAME");
-            if (name.equals(tname)) {
+            if (name.equalsIgnoreCase(tname)) {
                 return true;
             }
         }
@@ -86,7 +86,7 @@ public abstract class BaseLiaison implements DatabaseLiaison
         while (rs.next()) {
             String tname = rs.getString("TABLE_NAME");
             String cname = rs.getString("COLUMN_NAME");
-            if (tname.equals(table) && cname.equals(column)) {
+            if (tname.equalsIgnoreCase(table) && cname.equalsIgnoreCase(column)) {
                 return true;
             }
         }
@@ -102,7 +102,7 @@ public abstract class BaseLiaison implements DatabaseLiaison
         while (rs.next()) {
             String tname = rs.getString("TABLE_NAME");
             String iname = rs.getString("INDEX_NAME");
-            if (tname.equals(table) && index.equals(iname)) {
+            if (tname.equalsIgnoreCase(table) && index.equalsIgnoreCase(iname)) {
                 return true;
             }
         }

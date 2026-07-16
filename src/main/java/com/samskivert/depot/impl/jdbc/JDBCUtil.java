@@ -317,7 +317,7 @@ public class JDBCUtil
         ResultSet rs = conn.getMetaData().getTables("", "", name, null);
         while (rs.next()) {
             String tname = rs.getString("TABLE_NAME");
-            if (name.equals(tname)) {
+            if (name.equalsIgnoreCase(tname)) {
                 matched = true;
             }
         }
@@ -337,7 +337,7 @@ public class JDBCUtil
         while (rs.next()) {
             String tname = rs.getString("TABLE_NAME");
             String cname = rs.getString("COLUMN_NAME");
-            if (tname.equals(table) && cname.equals(column)) {
+            if (tname.equalsIgnoreCase(table) && cname.equalsIgnoreCase(column)) {
                 matched = true;
             }
         }
@@ -361,10 +361,10 @@ public class JDBCUtil
             String cname = rs.getString("COLUMN_NAME");
             String iname = rs.getString("INDEX_NAME");
             if (index == null) {
-                if (tname.equals(table) && cname.equals(column)) {
+                if (tname.equalsIgnoreCase(table) && cname.equalsIgnoreCase(column)) {
                     matched = true;
                 }
-            } else if (index.equals(iname)) {
+            } else if (index.equalsIgnoreCase(iname)) {
                 matched = true;
             }
         }
@@ -382,7 +382,7 @@ public class JDBCUtil
         while (rs.next()) {
             String tname = rs.getString("TABLE_NAME");
             String cname = rs.getString("COLUMN_NAME");
-            if (tname.equals(table) && cname.equals(column)) {
+            if (tname.equalsIgnoreCase(table) && cname.equalsIgnoreCase(column)) {
                 matched = true;
             }
         }
@@ -401,7 +401,7 @@ public class JDBCUtil
             String tname = rs.getString("TABLE_NAME");
             String cname = rs.getString("COLUMN_NAME");
             String iname = rs.getString("INDEX_NAME");
-            if (tname.equals(table) && cname.equals(column)) {
+            if (tname.equalsIgnoreCase(table) && cname.equalsIgnoreCase(column)) {
                 return iname;
             }
         }
@@ -634,7 +634,7 @@ public class JDBCUtil
         while (rs.next()) {
             String tname = rs.getString("TABLE_NAME");
             String cname = rs.getString("COLUMN_NAME");
-            if (tname.equals(table) && cname.equals(column)) {
+            if (tname.equalsIgnoreCase(table) && cname.equalsIgnoreCase(column)) {
                 return rs;
             }
         }

@@ -80,7 +80,7 @@
     <dependency>
       <groupId>com.samskivert</groupId>
       <artifactId>samskivert</artifactId>
-      <version>1.12</version>
+      <version>1.13</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
